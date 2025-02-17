@@ -17,7 +17,7 @@
   },
   "resolutions": {
     "@opam/ocp-indent": "1.7.0",
-    "@opam/dune": "3.17.2"
+    "@opam/dune": "3.11.1"
   },
   "esy": {
     "build": "dune build -p binaryen"
