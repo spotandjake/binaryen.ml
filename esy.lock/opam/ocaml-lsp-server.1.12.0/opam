@@ -18,12 +18,11 @@ license: "ISC"
 homepage: "https://github.com/ocaml/ocaml-lsp"
 bug-reports: "https://github.com/ocaml/ocaml-lsp/issues"
 depends: [
-  "dune" {>= "3.0"}
+  "dune" {>= "2.9"}
   "yojson"
   "re" {>= "1.5.0"}
   "ppx_yojson_conv_lib" {>= "v0.14"}
   "dune-rpc"
-  "chrome-trace" {>= "3.3.0"}
   "dyn"
   "stdune"
   "fiber" {>= "3.1.1"}
@@ -31,7 +30,7 @@ depends: [
   "ordering"
   "dune-build-info"
   "spawn"
-  "omd" {>= "1.3.2" & < "2.0.0~alpha1"}
+  "omd" {<= "1.3.1"}
   "octavius" {>= "1.2.2"}
   "uutf" {>= "1.0.2"}
   "pp" {>= "1.1.2"}
@@ -54,10 +53,10 @@ build: [
 ]
 url {
   src:
-    "https://github.com/ocaml/ocaml-lsp/releases/download/1.12.4/lsp-1.12.4.tbz"
+    "https://github.com/ocaml/ocaml-lsp/releases/download/1.12.0/lsp-1.12.0.tbz"
   checksum: [
-    "sha256=919b98027cbc56359dabe8a911d3d24d1706cea8cd04e8173a2d1d3b06f9d846"
-    "sha512=68898112f13b7ee13040933ed95597e59f83e42ac9d6ead375baa2d1248b1614b5b80ae5e0d839f7f5a8372fd1f47e6bf308d331ca1df90cb4b9927825f89635"
+    "sha256=bb6905bc2b93baac5017a2b3cabae73bb0089ef4df7e33e7b2aa78be9060c240"
+    "sha512=7abb7c7fdf89d308a559b4789cd04ea41dcf2d10862422a227f2baf884c582cacc65cc47ce8452ae7cb1286ce8ea320cfb75916230b289d1509884c1f40c4f40"
   ]
 }
-x-commit-hash: "f53ad362aa2c47216dd96d32b22bb95ee3e774e4"
+x-commit-hash: "5f3f4f5c4fb20c8471535fc8470073081bdc4144"
