@@ -68,7 +68,7 @@ jobs:
       - name: Build dependencies
         if: steps.esy-cache.outputs.cache-hit != 'true'
         run: |
-          esy build-dependencies
+          esy build-dependencies --opam-override-repository-remote=https://github.com/spotandjake/esy-opam-override
 
       - name: Build project
         run: |
