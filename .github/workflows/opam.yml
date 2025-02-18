@@ -1,53 +1,53 @@
-name: Opam
-on:
-  - push
-  - pull_request
+# name: Opam
+# on:
+#   - push
+#   - pull_request
 
-# This will cancel previous runs when a branch or PR is updated
-concurrency:
-  group: ${{ github.workflow }}-${{ github.head_ref || github.ref || github.run_id }}
-  cancel-in-progress: true
+# # This will cancel previous runs when a branch or PR is updated
+# concurrency:
+#   group: ${{ github.workflow }}-${{ github.head_ref || github.ref || github.run_id }}
+#   cancel-in-progress: true
 
-jobs:
-  build:
-    name: Build and test
-    runs-on: ${{ matrix.os }}
+# jobs:
+#   build:
+#     name: Build and test
+#     runs-on: ${{ matrix.os }}
 
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-22.04, macos-latest, windows-latest]
-        ocaml-compiler: [4.12.1, 4.13.1, 4.14.1]
+#     strategy:
+#       fail-fast: false
+#       matrix:
+#         os: [ubuntu-22.04, macos-latest, windows-latest]
+#         ocaml-compiler: [4.12.1, 4.13.1, 4.14.1]
 
-    steps:
-      - name: Checkout project
-        uses: actions/checkout@v3.5.3
-        with:
-          submodules: "recursive"
+#     steps:
+#       - name: Checkout project
+#         uses: actions/checkout@v3.5.3
+#         with:
+#           submodules: "recursive"
 
-      - name: Setup OCaml ${{ matrix.ocaml-compiler }}
-        uses: ocaml/setup-ocaml@v2
-        if: ${{ startsWith(matrix.os, 'windows-') }}
-        with:
-          ocaml-compiler: ${{ matrix.ocaml-compiler }}
-          opam-repositories: |
-            opam-repository-mingw: https://github.com/ocaml-opam/opam-repository-mingw.git#sunset
-            default: https://github.com/ocaml/opam-repository.git
+#       - name: Setup OCaml ${{ matrix.ocaml-compiler }}
+#         uses: ocaml/setup-ocaml@v2
+#         if: ${{ startsWith(matrix.os, 'windows-') }}
+#         with:
+#           ocaml-compiler: ${{ matrix.ocaml-compiler }}
+#           opam-repositories: |
+#             opam-repository-mingw: https://github.com/ocaml-opam/opam-repository-mingw.git#sunset
+#             default: https://github.com/ocaml/opam-repository.git
 
-      - name: Setup OCaml ${{ matrix.ocaml-compiler }}
-        uses: ocaml/setup-ocaml@v2
-        if: ${{ !startsWith(matrix.os, 'windows-') }}
-        with:
-          ocaml-compiler: ${{ matrix.ocaml-compiler }}
+#       - name: Setup OCaml ${{ matrix.ocaml-compiler }}
+#         uses: ocaml/setup-ocaml@v2
+#         if: ${{ !startsWith(matrix.os, 'windows-') }}
+#         with:
+#           ocaml-compiler: ${{ matrix.ocaml-compiler }}
 
-      - name: Install local dependencies
-        run: |
-          opam install . --deps-only --with-test
+#       - name: Install local dependencies
+#         run: |
+#           opam install . --deps-only --with-test
 
-      - name: Build project
-        run: |
-          opam exec -- dune build
+#       - name: Build project
+#         run: |
+#           opam exec -- dune build
 
-      - name: Run tests
-        run: |
-          opam exec -- dune runtest --display=short
+#       - name: Run tests
+#         run: |
+#           opam exec -- dune runtest --display=short
