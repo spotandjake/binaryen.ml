@@ -43,7 +43,7 @@ jobs:
 
       - name: Esy cache
         id: esy-cache
-        uses: actions/cache@v4.0.0
+        uses: actions/cache@v4
         with:
           path: _export
           key: ${{ runner.os }}-esy-${{ hashFiles('esy.lock/index.json') }}
