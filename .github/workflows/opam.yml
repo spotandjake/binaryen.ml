@@ -17,7 +17,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
-        ocaml-compiler: [4.12.1, 4.13.1, 4.14.1]
+        ocaml-compiler: [4.13.1, 4.14.1]
 
     steps:
       - name: Checkout project
@@ -26,13 +26,11 @@ jobs:
           submodules: "recursive"
 
       - name: Setup OCaml ${{ matrix.ocaml-compiler }}
-        uses: ocaml/setup-ocaml@0b8b8c6f352bfdd12fa56b6727eed5990aa22859 # v3.2.10
+        uses: tobil4sk/setup-ocaml@520a4f950aa9811dcabb170ec2e9660ddad9390b # v3.2.4 + msys2 support
         if: ${{ startsWith(matrix.os, 'windows-') }}
         with:
           ocaml-compiler: ${{ matrix.ocaml-compiler }}
-          opam-repositories: |
-            opam-repository-mingw: https://github.com/ocaml-opam/opam-repository-mingw.git#sunset
-            default: https://github.com/ocaml/opam-repository.git
+          windows-environment: msys2
 
       - name: Setup OCaml ${{ matrix.ocaml-compiler }}
         uses: ocaml/setup-ocaml@0b8b8c6f352bfdd12fa56b6727eed5990aa22859 # v3.2.10
