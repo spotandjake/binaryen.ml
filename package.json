@@ -5,18 +5,19 @@
   "author": "Oscar Spencer <oscar@grain-lang.org>",
   "license": "Apache-2.0",
   "dependencies": {
-    "ocaml": ">= 4.13.0 < 5.0.0",
+    "ocaml": ">= 4.13.0 <= 5.2.0",
     "@grain/libbinaryen": ">= 114.0.0 < 115.0.0",
     "@opam/dune": ">= 3.0.0",
     "@opam/dune-configurator": ">= 3.0.0"
   },
   "devDependencies": {
-    "@opam/js_of_ocaml-compiler": ">= 4.1.0 < 6.0.0",
-    "@opam/ocamlformat": "0.24.1",
-    "@opam/ocaml-lsp-server": ">= 1.9.1 < 1.13.0"
+    "@opam/js_of_ocaml-compiler": ">= 4.1.0 <= 6.0.1",
+    "@opam/ocamlformat": "> 0.26.1",
+    "@opam/ocaml-lsp-server": "> 1.9.1 <= 1.21.0"
   },
   "resolutions": {
-    "@opam/ocp-indent": "1.7.0"
+    "@opam/ocp-indent": "1.7.0",
+    "@grain/libbinaryen": "spotandjake/libbinaryen:package.json#1cf42119159765572ce420aa16859d41ac3aa6ea"
   },
   "esy": {
     "build": "dune build -p binaryen"
