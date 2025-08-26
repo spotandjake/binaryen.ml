@@ -13,12 +13,26 @@
   "devDependencies": {
     "@opam/js_of_ocaml-compiler": ">= 6.0.0 < 7.0.0",
     "@opam/ocamlformat": "0.24.1",
-    "@opam/ocaml-lsp-server": ">= 1.9.1 < 1.13.0"
+    "@opam/ocaml-lsp-server": ">= 1.9.1 < 1.18.0"
   },
   "resolutions": {
-    "@opam/ocp-indent": "1.7.0"
+    "@opam/ocp-indent": "1.7.0",
+    "@grain/libbinaryen": {
+      "source": "archive:https://registry.npmjs.org/@grain/libbinaryen/-/libbinaryen-117.0.0.tgz#sha1:0bb32f24a9016486b98e93f464017a357f5d86e7",
+      "override": {
+        "esy": {
+          "build": [
+            "bash -c #{os == 'windows' ? 'patch -p1 < $PROJECT_ROOT/winpatch.patch' : 'true'}",
+            "dune build -p libbinaryen -j 4"
+          ]
+        }
+      }
+    }
   },
   "esy": {
+    "buildEnv": {
+      "PROJECT_ROOT": "#{self.root}"
+    },
     "build": "dune build -p binaryen"
   },
   "scripts": {
