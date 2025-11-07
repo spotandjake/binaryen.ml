@@ -17,7 +17,7 @@
   },
   "resolutions": {
     "@opam/ocp-indent": "1.7.0",
-    "@grain/libbinaryen": "git+https://github.com/spotandjake/libbinaryen.git#193eb5ef9dbf89e3f6cb00a4730ffb23ea4ca699"
+    "@grain/libbinaryen": "git+https://github.com/spotandjake/libbinaryen.git#e8afa0ecec8201eb0ff013af31aa3347dea26f82"
   },
   "esy": {
     "build": "dune build -p binaryen"
