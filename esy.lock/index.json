@@ -1,5 +1,5 @@
 {
-  "checksum": "43b607828957b76c0263dc0b329d0237",
+  "checksum": "40cc6619c85ce0811e45ff39c360f8f7",
   "root": "@grain/binaryen.ml@link-dev:./package.json",
   "node": {
     "ocaml@5.3.0@d41d8cd9": {
@@ -1960,14 +1960,14 @@
         [ "windows", "x86_64" ]
       ]
     },
-    "@grain/libbinaryen@124.0.1@d41d8cd9": {
-      "id": "@grain/libbinaryen@124.0.1@d41d8cd9",
+    "@grain/libbinaryen@git:https://www.github.com/spotandjake/libbinaryen.git#5de1da2b282031703b0d3f965ea12c5b6a635d80@d41d8cd9": {
+      "id": "@grain/libbinaryen@git:https://www.github.com/spotandjake/libbinaryen.git#5de1da2b282031703b0d3f965ea12c5b6a635d80@d41d8cd9",
       "name": "@grain/libbinaryen",
-      "version": "124.0.1",
+      "version": "git:https://www.github.com/spotandjake/libbinaryen.git#5de1da2b282031703b0d3f965ea12c5b6a635d80",
       "source": {
         "type": "install",
         "source": [
-          "archive:https://registry.npmjs.org/@grain/libbinaryen/-/libbinaryen-124.0.1.tgz#sha1:7b29acc4a62ab5a849c6e01c3d8e90c78efd05f2"
+          "git:https://www.github.com/spotandjake/libbinaryen.git#5de1da2b282031703b0d3f965ea12c5b6a635d80"
         ]
       },
       "overrides": [],
@@ -1999,7 +1999,7 @@
         "ocaml@5.3.0@d41d8cd9",
         "@opam/dune-configurator@opam:3.20.2@7eb6ff01",
         "@opam/dune@opam:3.20.2@8daef28d",
-        "@grain/libbinaryen@124.0.1@d41d8cd9"
+        "@grain/libbinaryen@git:https://www.github.com/spotandjake/libbinaryen.git#5de1da2b282031703b0d3f965ea12c5b6a635d80@d41d8cd9"
       ],
       "devDependencies": [
         "@opam/ocamlformat@opam:0.27.0@c40d4612",
