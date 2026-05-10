@@ -46,4 +46,46 @@
    packed_type.js
    heap_type.js
    signature_type.js
-   struct_type.js)))
+   struct_type.js))
+ (wasm_of_ocaml
+  (javascript_files
+   array_type.js
+   type.js
+   op.js
+   literal.js
+   expression.js
+   function.js
+   import.js
+   export.js
+   global.js
+   table.js
+   tag.js
+   memory.js
+   module_feature.js
+   module.js
+   settings.js
+   packed_type.js
+   heap_type.js
+   signature_type.js
+   struct_type.js)
+  (wasm_files
+   array_type.wat
+   type.wat
+   op.wat
+   literal.wat
+   expression.wat
+   ; function.wat
+   ; import.wat
+   export.wat
+   ; global.wat
+   ; table.wat
+   ; tag.wat
+   ; memory.wat
+   module_feature.wat
+   ; module.wat
+   settings.wat
+   packed_type.wat
+   ; heap_type.wat
+   ; signature_type.wat
+   ; struct_type.wat
+   )))

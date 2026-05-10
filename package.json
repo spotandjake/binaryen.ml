@@ -9,17 +9,20 @@
   },
   "dependencies": {
     "ocaml": ">= 4.13.0 < 5.4.0",
-    "@grain/libbinaryen": ">= 127.0.0 < 128.0.0",
+    "@grain/libbinaryen": "*",
     "@opam/dune": ">= 3.0.0",
     "@opam/dune-configurator": ">= 3.0.0"
   },
   "devDependencies": {
     "@opam/js_of_ocaml-compiler": ">= 6.3.0 < 7.0.0",
+    "@opam/wasm_of_ocaml-compiler": ">= 6.3.0 < 7.0.0",
     "@opam/ocamlformat": "0.29.0",
     "@opam/ocaml-lsp-server": ">= 1.9.1 < 2.0.0"
   },
   "resolutions": {
-    "@opam/ocp-indent": "1.9.0"
+    "@opam/ocp-indent": "1.9.0",
+    "@grain/libbinaryen": "link:../libbinaryen/package.json",
+    "@opam/conf-binaryen": "spotandjake/binaryen:esy.json#b222cb5cbefe9b21dc43464c933cfdd4abc69f34"
   },
   "esy": {
     "build": "dune build -p binaryen"

@@ -1,7 +1,9 @@
 (executable
  (name test)
  (libraries binaryen)
- (modes exe js)
+ (modes exe js wasm)
+ (wasm_of_ocaml
+   (compilation_mode separate))
  (flags
   :standard
   (:include ./config/ocamlopt_flags.sexp)))
@@ -25,3 +27,14 @@
     test_js.out
     (run node %{dep:test.bc.js}))
    (diff test_js.out test.expected))))
+
+(rule
+ (alias runtest)
+ (enabled_if
+  (= %{bin-available:node} true))
+ (action
+  (progn
+   (with-stdout-to
+    test_wasm.out
+    (run node %{dep:test.bc.wasm.js}))
+   (diff test_wasm.out test.expected))))
